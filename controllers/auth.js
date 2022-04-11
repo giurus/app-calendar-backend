@@ -70,6 +70,8 @@ const validateToken = async (req, res = response) => {
   const token = await generateJWT(req.uid, req.name);
   res.json({
     ok: true,
+    uid: req.uid,
+    name: req.name,
     token,
   });
 };
